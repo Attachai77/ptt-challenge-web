@@ -35,7 +35,7 @@ function Fruits() {
     e.preventDefault();
     try {
       await createFruitService(form);
-      setIsShowModal(false)
+      setIsShowModal(false);
     } catch (error) {}
   };
 
@@ -126,65 +126,63 @@ function Fruits() {
           </Row>
 
           <Row className="mt-3">
-          <Col md={{ span: 8, offset: 2 }}>
-            <Form>
-              <Form.Group
-                as={Row}
-                className="mb-3"
-                controlId="formHorizontalEmail"
-              >
-                <Form.Label column sm={2} style={{ textAlign: "right" }}>
-                  Name :
-                </Form.Label>
-                <Col sm={10}>
-                  <Form.Control
-                    type="text"
-                    onChange={(e) => setField("name", e.target.value)}
-                  />
-                </Col>
-              </Form.Group>
+            <Col md={{ span: 8, offset: 2 }}>
+              <Form>
+                <Form.Group
+                  as={Row}
+                  className="mb-3"
+                  controlId="formHorizontalEmail"
+                >
+                  <Form.Label column sm={2} style={{ textAlign: "right" }}>
+                    Name :
+                  </Form.Label>
+                  <Col sm={10}>
+                    <Form.Control
+                      type="text"
+                      onChange={(e) => setField("name", e.target.value)}
+                    />
+                  </Col>
+                </Form.Group>
 
-              <Form.Group
-                as={Row}
-                className="mb-3"
-                controlId="formHorizontalPassword"
-              >
-                <Form.Label column sm={2} style={{ textAlign: "right" }}>
-                  Photo :
-                </Form.Label>
-                <Col sm={10}>
-                  <Form.Control
-                    type="file"
-                    accept="image/png, image/gif, image/jpeg"
-                    onChange={selectFile}
-                  />
-                </Col>
-              </Form.Group>
+                <Form.Group
+                  as={Row}
+                  className="mb-3"
+                  controlId="formHorizontalPassword"
+                >
+                  <Form.Label column sm={2} style={{ textAlign: "right" }}>
+                    Photo :
+                  </Form.Label>
+                  <Col sm={10}>
+                    <Form.Control
+                      type="file"
+                      accept="image/png, image/gif, image/jpeg"
+                      onChange={selectFile}
+                    />
+                  </Col>
+                </Form.Group>
 
-              <Form.Group as={Row} className="mb-3">
-                <Col sm={{ span: 10, offset: 2 }}>
-                  <Button
-                    type="button"
-                    variant="success"
-                    onClick={handleSubmit}
-                  >
-                    Save
-                  </Button>{" "}
-                  <Link to="/">
+                <Form.Group as={Row} className="mb-3">
+                  <Col sm={{ span: 10, offset: 2 }}>
+                    <Button
+                      type="button"
+                      variant="success"
+                      onClick={handleSubmit}
+                    >
+                      Save
+                    </Button>{" "}
                     <Button
                       type="reset"
                       variant="light"
                       style={{ backgroundColor: "#ddd" }}
+                      onClick={() => setIsShowModal(false)}
                     >
                       Cancel
                     </Button>
-                  </Link>
-                </Col>
-              </Form.Group>
-            </Form>
-          </Col>
-        </Row>
-
+                  </Col>
+                </Form.Group>
+              </Form>
+            </Col>
+          </Row>
         </Modal.Body>
       </Modal>
     </>
